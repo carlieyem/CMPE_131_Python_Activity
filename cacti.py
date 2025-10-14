@@ -1,13 +1,19 @@
-def cacti_number(plot: list) -> int:
-    plantable = 0
-    if not isinstance(plot, list):
-        raise TypeError("Input must be a list")
-    
-    plotLen = len(plot)
-    for y in range(0, plotLen):
-        rowLen = len(plot[y])
-        for x in rowLen:
-            if plot[y][x] == 0 and plot[y-1][x] != 1 and plot[y+1][x] != 1 and plot[y][x-1] != 1 and plot[y][x+1] != 1:
-                plantable += 1
+def cacti_number(CactiMap: list) -> int:
+    if not isinstance(CactiMap, list):
+        raise TypeError
+    Count = 0
+    ColLength = len(CactiMap)
 
-    return plantable
+    for y in range(0, ColLength): 
+        RowLength = len(CactiMap[y])
+        
+        for x in range(0, RowLength): 
+            if CactiMap[y][x] == 0: 
+                IsPlantable = x - 1 < 0 or CactiMap[y][x - 1] == 0
+                IsPlantable = IsPlantable and (x + 1 >= RowLength or CactiMap[y][x + 1] == 0)
+                IsPlantable = IsPlantable and (y - 1 < 0 or CactiMap[y - 1][x] == 0)
+                IsPlantable = IsPlantable and (y + 1 >= ColLength or CactiMap[y + 1][x] == 0)
+                if IsPlantable:
+                    Count += 1
+                    CactiMap[y][x] = 1; # plant it so we don't forget
+    return Count
