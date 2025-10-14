@@ -1,0 +1,8 @@
+In heritance is useful in a program because it allows you to make objects that are modular and 
+allows you to reuse code without having to rewrite it.
+
+Some uses could be:
+1. "Polymorphism" -- Creating profiles for someone where each item on the profile has its own objects
+    Ex: Airplane passanger profile where they have departure, arrival locations and flight details with times, and baggage details
+2. "Reusability" -- Making base profiles for objects and reusing the object features for new objects
+    Ex: Shapes having length, width, height --> square, rectangles, & other shapes 
