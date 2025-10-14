@@ -1,4 +1,6 @@
-def my_steps(n):
+def my_steps(n: int) -> int:
+    if not isinstance(n, int):
+        raise TypeError("Input must be an integer")
     if (n < 1) or (n >25):
         return 0, "ValueError"
     a = 1

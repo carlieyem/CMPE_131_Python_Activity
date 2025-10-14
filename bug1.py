@@ -9,7 +9,7 @@ class Base:
 # TODO: there's code missing in one or more lines below
 
 class Circle(Base):
-    def __init__(x, y, size):
+    def __init__(self, x, y, size):
         super().__init__(x, y, size)
         
     def draw(self):
