@@ -11,8 +11,7 @@ class Base:
 class Circle(Base):
     def __init__(x, y, size):
         super().__init__(x, y, size)
-    def shape(self):
-        return Base.shape(self) + "\n (" + self.x + ", " + self.y + ")\n" + self.size
+        
     def draw(self):
         return f"""
 ({self.x}, {self.y})\n{self.size}

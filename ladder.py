@@ -9,6 +9,4 @@ def my_steps(n):
         if i == 2:
             return 2
         else:
-            a = b
-            b = a + b
-    return b
+            return my_steps(n-1) + my_steps(n-2)
