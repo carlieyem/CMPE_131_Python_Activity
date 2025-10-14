@@ -1,5 +1,5 @@
 def my_steps(n: int) -> int:
-    if not isinstance(n, int) or (n < 1) or (n >25):
+    if not isinstance(n, int) or (n not in range(1, 25)):
         raise TypeError("Input must be an integer")
     
     if n <= 2:
